@@ -3,7 +3,9 @@ var express = require('express');
 var app = express.createServer(express.logger());
 
 fs = require('fs');
-mytext = fs.readFileSync("index.html");
+mycontent = fs.readFileSync("index.html");
+mytext = mycontent.toString('utf8');
+
 
 app.get('/', function(request, response) {
 //  response.send('Hello World 2!');
